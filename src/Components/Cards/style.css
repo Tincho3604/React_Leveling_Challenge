@@ -14,8 +14,7 @@
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
     opacity: 0.95;
     font-weight: 900;
-    
-   
+
 }
 
 .mainButtonsContainer{
@@ -33,32 +32,47 @@
     color: rgb(255, 255, 255);
     font-family: 'Maven Pro', sans-serif;
     font-weight: bold;
+    border-bottom: 1px solid rgb(163, 163, 173);
     text-align: center;
-    padding-bottom: 18px;
-    width: '100%';
 }
 
 @media (max-width: 1500px) and (min-width: 1200px){
     .mainCardContainer{
-    width: 50vw;
+    width: 40vw;
+    height:  40vh;
+    }
+    .mainCardContainer h2{
+        font-size: 0.9rem;
+        padding-bottom: 45px;
+    }
+    .mainButtonsContainer{
+        width: 15vw;
+        height: 15vh;
+        margin: auto;
     }
 }
 
 
+
 @media (max-width: 1200px) and (min-width: 700px){
     .mainCardContainer{
-        width: 60vw;
-        
+        width: 40vw;
+        height:  50vh;
+    }
+    .mainCardContainer h2{
+        font-size: 0.7rem;
+        padding-bottom: 45px;
     }
 }
 
 
 @media (max-width: 700px) and (min-width: 200px){
     .mainCardContainer{
-        width: 45vw;
+        width: 80vw;
         height:  45vh;
     }
     .mainCardContainer h2{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+        padding-bottom: 45px;
     }
 }

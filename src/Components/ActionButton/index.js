@@ -3,10 +3,12 @@ import './style.css';
 
 const ActionButton = ({textButton, functionButton, argument, colorButton}) => {
 return (
-    <>
-        <button className="operationButton" style={colorButton} onClick={() => functionButton(argument)}>{textButton}</button>
-    </>
+    <div className="sbuttonContainer">
+        <button className="operationButton" style={colorButton} onClick={() => console.log("Click")}>{textButton}</button>
+    </div>
 )
 }
 
 export default ActionButton
+
+//functionButton(argument)

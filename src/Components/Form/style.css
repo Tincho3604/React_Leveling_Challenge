@@ -1,0 +1,87 @@
+
+.mainFormContainer{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.form-registrer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+    opacity: 1;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('../../Images/form-user-wallpaper.jpg');
+    width: 50vh;
+    height: 80vh;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+.form-container h1{
+    font-family: 'Pathway Gothic One', sans-serif;
+    color: rgb(255, 255, 255);
+    letter-spacing: 3px;
+}
+.imgForm{
+    width: 70vh;
+    height: 80vh;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.imgContainer{
+    margin-top: 35px;
+    border-top-right-radius: 10px;
+}
+
+@media (max-width: 995px) and (min-width: 500px){
+    .imgContainer{
+        display: none;
+    }
+
+    .form-container h1{
+        font-size: 25px;
+    }
+    .form-container{
+    border-radius: 15px;
+    }
+}
+
+@media (max-width: 500px)  and (min-width: 200px){
+    .imgContainer{
+        display: none;
+    }
+    
+    .form-container{
+        border-radius: 15px;
+        width: 40vh;
+
+    }
+    .form-container h1{
+        letter-spacing: 3px;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+@media (max-height: 670px) and (min-height: 300px){
+    
+    .form-container{
+        border-radius: 15px;
+    }
+    .form-container h1{
+        text-align: center;
+    }
+}

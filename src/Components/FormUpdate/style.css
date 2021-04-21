@@ -1,0 +1,162 @@
+.mainUpdateFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.15);
+    width:30vw;
+    height: 38vh;
+    opacity: 0.7;
+    padding-bottom:15px;
+    text-align: center;
+    margin-bottom: 15px;
+    position:relative;
+}
+.mainUpdateFormContainer h2 {
+    font-size: 35px;
+    font-size: 2rem;
+    font-family: 'Goldman', cursive;
+    color: rgb(255, 255, 255);
+    padding-bottom: 55px;
+    text-align: center;
+}
+.updater{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    padding-left: 60px;
+    height: 10vh;
+}
+
+.buttonUpdater{
+    border:none;
+    background-color: rgb(141, 227, 230);
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    width: 18vw;
+    height: 5vh;
+    font-family: 'Goldman', cursive;
+    font-size: 1rem;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin-top: 55px;
+}
+
+.buttonUpdater {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.buttonUpdater:hover,
+.loadInputs:hover, 
+.buttonUpdater:focus, 
+.loadInputs:focus, 
+.buttonUpdater:active , 
+.loadInputs:active{
+
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    outline: none;
+}
+
+
+.loadInputs{
+    border:none;
+    background-color: rgb(106, 96, 238);
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    width: 18vw;
+    height: 5vh;
+    font-family: 'Goldman', cursive;
+    font-size: 1rem;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1500px)and (min-width: 1000px){
+.mainUpdateFormContainer{
+    height: 42vh;
+    }
+}
+
+
+@media (max-width: 1000px)and (min-width: 800px){
+    .mainUpdateFormContainer{
+        width: 50vw;
+        height: 42vh;
+    }
+    .updater{
+        height: 15vh;
+    }
+    #selectFilter{
+        height: 4vh;
+        width: 18vw;
+    }
+.loadInputs{
+    width: 22vw;
+    margin-top: 20px;
+}
+    .buttonUpdater{
+        width: 23vw;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 800px)and (min-width: 500px){
+    .mainUpdateFormContainer{
+        width: 100%;
+        height: 100%;
+    }
+    .updater{
+        height: 15vh;
+    }
+    #selectFilter{
+        height: 4vh;
+        width: 18vw;
+    }
+.loadInputs{
+    width: 30vw;
+    margin-top: 20px;
+}
+    .buttonUpdater{
+        width: 30vw;
+        font-size: 0.8rem;
+    
+    }
+}
+@media (max-width: 500px)and (min-width: 200px){
+    .mainUpdateFormContainer{
+        width: 100%;
+        height: 48vh;
+    }
+    .mainUpdateFormContainer h3{
+    font-size: 1em;
+    }
+    .updater{
+        height: 15vh;
+    }
+    #selectFilter{
+        height: 4vh;
+    }
+    .loadInputs{
+        width: 46vw;
+        margin-top: 20px;
+        height: 5vh;
+}
+    .buttonUpdater{
+        width: 46vw;
+        font-size: 0.8rem;
+    }
+}

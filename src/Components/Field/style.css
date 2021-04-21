@@ -135,7 +135,17 @@ option{
     }
 }
 
+#form-label{
+    margin-right: 50px;
+}
 
+.mainInputContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
 
 
 

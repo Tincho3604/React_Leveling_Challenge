@@ -23,11 +23,6 @@ export const SidebarData = [
         path: '/register',
         cName: 'nav-text',
     },
-    {
-        title: 'Details',
-        path: '/details',
-        cName: 'nav-text',
-    },
 ];
 
 

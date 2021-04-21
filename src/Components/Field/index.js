@@ -18,7 +18,7 @@ const Field = ({
 }) => {
 
         return(
-            <div className={classInput}>
+            <div className="mainInputContainer">
                 <label htmlFor={htmlFor} id="form-label">{labelText}</label>
                 <div className="mainElementsContainer">
                     <div className="inputContainer">

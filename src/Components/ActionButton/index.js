@@ -3,7 +3,7 @@ import './style.css';
 
 const ActionButton = ({textButton, functionButton, argument, colorButton}) => {
 return (
-    <div className="sbuttonContainer">
+    <div className="buttonContainer">
         <button className="operationButton" style={colorButton} onClick={() => console.log("Click")}>{textButton}</button>
     </div>
 )

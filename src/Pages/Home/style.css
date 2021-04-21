@@ -4,3 +4,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.mainCardHomeContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 10px;
+}

@@ -6,7 +6,11 @@ const Home = () => {
 return (
     <div className="mainHomeContainer"> 
         <NavBar/>
-        <Cards title="Test" />
+        <div className="mainCardHomeContainer">
+            {[1,2,3,4,5].map((card, index) => {
+                return <Cards key={index} title="Test" />
+            })}
+        </div>
     </div>
     )
 }

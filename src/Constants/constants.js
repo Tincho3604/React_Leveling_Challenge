@@ -9,6 +9,7 @@ export const viewDatilsButtonStyle = {
     background: 'linear-gradient(0deg, rgba(242,15,15,1) 0%, rgba(121,247,0,1) 0%, rgba(132,162,255,1) 100%)'
 }
 
+export const ROUTE_API = 'https://jsonplaceholder.typicode.com';
 export const linkedinLink = 'https://www.linkedin.com/in/martin-cumpe-77736a198/'
 export const githubLink = "https://github.com/Tincho3604"
 export const instagramLink = "https://www.instagram.com/clave_code/?hl=es"

@@ -5,6 +5,7 @@ import Home from './Pages/Home/index';
 import Register from './Pages/Register/index';
 import Details from './Pages/Details';
 import Edit from './Pages/Edit';
+
 function App() {
     
     return (

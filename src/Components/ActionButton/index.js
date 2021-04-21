@@ -1,11 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-const ActionButton = ({textButton, functionButton, argument, colorButton}) => {
+const ActionButton = ({textButton, functionButton, argument, colorButton, path}) => {
 return (
-    <div className="buttonContainer">
-        <button className="operationButton" style={colorButton} onClick={() => console.log("Click")}>{textButton}</button>
-    </div>
+    <>
+    <Link to={path} className="Linkbutton" style={{border:'none', background:'none'}}>
+        <div className="buttonContainer" >
+            <button className="operationButton" style={colorButton} onClick={() => functionButton(argument)}>{textButton}</button>
+        </div>
+    </Link>
+    </>
 )
 }
 

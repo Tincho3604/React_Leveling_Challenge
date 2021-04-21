@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(30, 61, 201);
     box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.15);
     width:30vw;
     height: 38vh;
@@ -13,6 +13,7 @@
     text-align: center;
     margin-bottom: 15px;
     position:relative;
+    border-radius: 35px;
 }
 .mainUpdateFormContainer h2 {
     font-size: 35px;
@@ -21,6 +22,8 @@
     color: rgb(255, 255, 255);
     padding-bottom: 55px;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 15px;
 }
 .updater{
     display: flex;
@@ -45,6 +48,8 @@
     border-radius: 10px;
     letter-spacing: 1px;
     margin-top: 55px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
 }
 
 .buttonUpdater {

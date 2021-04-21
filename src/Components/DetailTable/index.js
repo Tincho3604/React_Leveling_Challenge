@@ -1,10 +1,18 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import {titleColumn} from '../../Constants/constants';
-import './style.css'
+import './style.css';
+
+
 const DetailTable = ({title}) => {
+	const [currentPost, setCurrentPost] = useState({})
+
+    useEffect(() => {
+       setCurrentPost((JSON.parse(localStorage.getItem("currentPost"))))
+    }, []);
 return (
     <>
     <div className="main-container-table">
+		<h1>{`Details of Post N° ${currentPost?.id}`}</h1>
     <table className="container">
 	    <thead>
 		    <tr>
@@ -15,10 +23,10 @@ return (
 	    </thead>
 	    <tbody>
 		    <tr>
-                <td>Valor 1</td>
-                <td>Valor 1</td>
-                <td>Valor 1</td>
-                <td>Valor 1</td>
+                <td>{currentPost?.id}</td>
+                <td>{currentPost?.userId}</td>
+                <td>{currentPost?.title}</td>
+                <td>{currentPost?.body}</td>
 		    </tr>
 	    </tbody>
     </table>

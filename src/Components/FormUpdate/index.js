@@ -6,15 +6,19 @@ import './style.css';
 
 const FormUpdate = () => {
     
-    const [types, setTypes] = useState('')
-
+    const [currentPost, setCurrentPost] = useState({})
 
     useEffect(() => {
-        //setypes(uniqueItem[0].types)
+       setCurrentPost((JSON.parse(localStorage.getItem("currentPost"))))
     }, []);
     
-    const {handleSubmit, formState: {errors}, register, reset } = useForm();
-
+    const {handleSubmit, formState: {errors}, register, reset } = useForm({
+        defaultValues: {
+            title: currentPost?.title,
+            body: currentPost?.body,
+        }
+    });
+console.log("Current ",currentPost);
      const onSubmit = (data,e) => {
         e.preventDefault();
         console.log('DATOS SUBMIT',data)
@@ -48,7 +52,7 @@ return <>
                         })}
                         
                 </div>
-                <input type="submit" className="buttonUpdater" value="Update blog"/>
+                <input type="submit" className="buttonUpdater" value="Update Post"/>
         </form>
     </div>
 </>

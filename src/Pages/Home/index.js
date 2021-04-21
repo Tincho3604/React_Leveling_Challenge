@@ -24,8 +24,8 @@ return (
         <div className="mainHomeContainer"> 
             <h1>List of Blogs</h1>
             <div className="mainCardHomeContainer">
-                {postState?.map((card, index) => {
-                    return <DetailCard key={index} title={card.title} id={card.id}/>
+                {postsList?.map((card, index) => {
+                    return <DetailCard key={index} title={card.title} id={card.id} userId={card.userId} body={card.body}/>
                 })}
             </div>
         </div>

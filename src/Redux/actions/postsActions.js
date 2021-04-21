@@ -1,10 +1,13 @@
 import axios from "axios"
 import { ROUTE_API } from "../../Constants/constants"
 
-export const createPost = postInfo => {
-		return async (dispatch, getState) => {
-			const response = await axios.post(`${ROUTE_API}/posts`, postInfo)
-			console.log(response);
+export const createPost = postInfo => {	
+	    return async (dispatch, getState) => {
+			await axios.post(`${ROUTE_API}/posts`, postInfo)
+			dispatch({
+				type: "SAVE_POST",
+				payload: postInfo
+			})
 		}
 	}
 
@@ -13,7 +16,6 @@ export const getAllPosts = () => {
 		return async (dispatch, getState) => {
 			const response = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
 			const info = response.data
-            console.log("En redux",info)
 			dispatch({
 				type: "GET_ALL_POSTS",
 				payload: info

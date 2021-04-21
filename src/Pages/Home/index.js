@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import DetailCard from '../../Components/DetailCard';
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
@@ -8,25 +8,27 @@ import {getAllPosts} from '../../Redux/actions/postsActions';
 
 const Home = () => {
     
-    const postsList= useSelector(store => store.PostsReducer.posts) 
+    const postsList = useSelector(store => store.PostsReducer.posts)
     const dispatch =  useDispatch()
+    const [postState, setPostState] = useState([])
 
     useEffect(() => { 
         dispatch(getAllPosts());
+        localStorage.setItem('postArrays', JSON.stringify(postsList));
+        setPostState(JSON.parse(localStorage.getItem("postArrays")))
     },[]);
-
 
 return (
     <>
-<NavBar/>
-    <div className="mainHomeContainer"> 
-        <h1>List of Blogs</h1>
-        <div className="mainCardHomeContainer">
-            {postsList?.map((card, index) => {
-                return <DetailCard key={index} title={card.title} id={card.id}/>
-            })}
+    <NavBar/>
+        <div className="mainHomeContainer"> 
+            <h1>List of Blogs</h1>
+            <div className="mainCardHomeContainer">
+                {postState?.map((card, index) => {
+                    return <DetailCard key={index} title={card.title} id={card.id}/>
+                })}
+            </div>
         </div>
-    </div>
     <Footer />
     </>
     )

@@ -18,7 +18,7 @@
 .container .card .face.face1{
     position: relative;
     background: #333;
-    height: 25vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;

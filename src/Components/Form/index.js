@@ -1,20 +1,40 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Field from '../../Components/Field';
 import './style.css';
-import { useForm } from 'react-hook-form';
+import { useForm, } from 'react-hook-form';
 import {fieldsForm, customAlerts} from '../../Constants/constants';
+import { useSelector,useDispatch} from 'react-redux';
+import {createPost, getAllPosts} from '../../Redux/actions/postsActions';
 
 const Form = ({title}) => {
-    
+
+    const postsList = useSelector(store => store?.PostsReducer.posts) 
+
+    const [id, setId] = useState(postsList[postsList.length-1]?.id+1)
+    const [idUser, setIdUser] = useState(11)
+
+    const dispatch =  useDispatch()
     const {handleSubmit, formState: {errors}, register, reset } = useForm();
     
     const onSubmit = (data,e) => {
         e.preventDefault();
-        console.log('DATOS SUBMIT',data)
+        setId(id+1);
+        let newArray = {...data, id, idUser};
+        console.log(newArray)
+        dispatch(createPost(newArray))
         customAlerts("Form success complete!", "You add a new post", "success")
         e.target.reset();
         reset();
     }
+
+
+    useEffect(() => {
+        dispatch(getAllPosts());
+        //console.log("Use Effect",postsList[postsList.length-1]?.id)
+        //setId(postsList[postsList.length-1]?.id)
+    },[]);
+
+
     return (    
     <div className="mainFormContainer">
         <div className="imgContainer">  

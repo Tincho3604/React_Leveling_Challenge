@@ -10,6 +10,11 @@ function PostsReducer(state = initialState, action) {
 				...state,
 				posts: action.payload,
 			}
+			case "SAVE_POST":	
+			return{ 
+				...state,
+				posts: [...state.posts, action.payload]
+			}
 
         case "GET_POST_BY_ID":	
 			return {

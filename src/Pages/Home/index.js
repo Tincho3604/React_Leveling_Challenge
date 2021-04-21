@@ -11,9 +11,8 @@ const Home = () => {
     const postsList= useSelector(store => store.PostsReducer.posts) 
     const dispatch =  useDispatch()
 
-    console.log(postsList)
     useEffect(() => { 
-        getAllPosts()
+        dispatch(getAllPosts());
     },[]);
 
 
@@ -23,8 +22,8 @@ return (
     <div className="mainHomeContainer"> 
         <h1>List of Blogs</h1>
         <div className="mainCardHomeContainer">
-            {[1,2,3,4,5].map((card, index) => {
-                return <DetailCard key={index} title={"Titulo test"} />
+            {postsList?.map((card, index) => {
+                return <DetailCard key={index} title={card.title} id={card.id}/>
             })}
         </div>
     </div>

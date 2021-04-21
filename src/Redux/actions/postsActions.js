@@ -11,9 +11,9 @@ export const createPost = postInfo => {
 	
 export const getAllPosts = () => {
 		return async (dispatch, getState) => {
-			const response = await axios.get(`${ROUTE_API}/posts`)
-			const info = response.data.response
-            console.log(info)
+			const response = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+			const info = response.data
+            console.log("En redux",info)
 			dispatch({
 				type: "GET_ALL_POSTS",
 				payload: info
@@ -24,7 +24,7 @@ export const getAllPosts = () => {
 	export const getPostById = (id) => {
 		return async (dispatch, getState) => {
 			const response = await axios.get(`${ROUTE_API}/posts/${id}`)
-			const info = response.data.response
+			const info = response.data
             console.log(info)
 			dispatch({
 				type: "GET_POST_BY_ID",
@@ -36,7 +36,7 @@ export const getAllPosts = () => {
 	export const editPost = (id) => {
 		return async (dispatch, getState) => {
 			const response = await axios.put(`${ROUTE_API}/posts/${id}`)
-			const info = response.data.response
+			const info = response.data
 			console.log(info)
             dispatch({
 				type: "EDIT_POST",
@@ -48,7 +48,7 @@ export const getAllPosts = () => {
     export const deletePost = (id) => {
 		return async (dispatch, getState) => {
 			const response = await axios.delete(`${ROUTE_API}/posts/${id}`)
-			const info = response.data.response
+			const info = response.data
 			console.log(info)
 		}
 	}

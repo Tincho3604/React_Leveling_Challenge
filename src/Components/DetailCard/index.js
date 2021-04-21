@@ -11,13 +11,13 @@ return (
         <div className="card">
             <div className="face face1">
                 <div className="content">
-                    <img src={Blog} />
-                    <h3>{`Blog${1}`}</h3>
+                    <img src={Blog} alt="img blog"/>
+                    <p>{`Post N°${id}`}</p>
+                    <p>{title}</p>
                 </div>
             </div>
             <div className="face face2">
                 <div className="content">
-                    <p>{title}</p>
                     <ActionButton textButton={"Edit"} colorButton={editButtonStyle}/>
                     <ActionButton textButton={"View Details"} colorButton={viewDatilsButtonStyle}/>
                     <ActionButton textButton={"Delete"}/>

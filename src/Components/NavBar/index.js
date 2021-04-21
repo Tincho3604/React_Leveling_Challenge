@@ -11,9 +11,9 @@ return (
     <>
         <div className="wrapper">
             <input type="checkbox" id="check" />
-            <label for="check" className="open"><GiIcons.GiHamburgerMenu/></label>
+            <label htmlFor="check" className="open"><GiIcons.GiHamburgerMenu/></label>
             <nav>
-                <label for="check" className="close"><AiIcons.AiOutlineCloseCircle size={30}/></label>
+                <label htmlFor="check" className="close"><AiIcons.AiOutlineCloseCircle size={30}/></label>
                     <ul>
                     {SidebarData?.map((item, index) => {
               return (

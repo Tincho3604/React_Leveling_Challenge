@@ -1,17 +1,17 @@
 import axios from "axios"
-import { RUTA_API } from "../../Constants/constants"
+import { ROUTE_API } from "../../Constants/constants"
 
-const orderActions = {
-    createPost: order => {
+export const createPost = postInfo => {
 		return async (dispatch, getState) => {
-			const response = await axios.post(`${RUTA_API}/posts`, order)
+			const response = await axios.post(`${ROUTE_API}/posts`, postInfo)
 			console.log(response);
 		}
-	},
+	}
 
-	getAllPosts: () => {
+	
+export const getAllPosts = () => {
 		return async (dispatch, getState) => {
-			const response = await axios.get(`${RUTA_API}/posts`)
+			const response = await axios.get(`${ROUTE_API}/posts`)
 			const info = response.data.response
             console.log(info)
 			dispatch({
@@ -19,11 +19,11 @@ const orderActions = {
 				payload: info
 			})
 		}
-	},
+	}
 
-    getPostById: (id) => {
+	export const getPostById = (id) => {
 		return async (dispatch, getState) => {
-			const response = await axios.get(`${RUTA_API}/posts/${id}`)
+			const response = await axios.get(`${ROUTE_API}/posts/${id}`)
 			const info = response.data.response
             console.log(info)
 			dispatch({
@@ -31,11 +31,11 @@ const orderActions = {
 				payload: info
 			})
 		}
-	},
+	}
 
-    editPost: (id) => {
+	export const editPost = (id) => {
 		return async (dispatch, getState) => {
-			const response = await axios.put(`${RUTA_API}/posts/${id}`)
+			const response = await axios.put(`${ROUTE_API}/posts/${id}`)
 			const info = response.data.response
 			console.log(info)
             dispatch({
@@ -43,15 +43,13 @@ const orderActions = {
 				payload: id
 			})
 		}
-	},
+	}
 
-    deletePost: (id) => {
+    export const deletePost = (id) => {
 		return async (dispatch, getState) => {
-			const response = await axios.delete(`${RUTA_API}/posts/${id}`)
+			const response = await axios.delete(`${ROUTE_API}/posts/${id}`)
 			const info = response.data.response
 			console.log(info)
 		}
 	}
-}
 
-export default orderActions;

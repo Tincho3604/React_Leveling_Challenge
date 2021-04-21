@@ -3,7 +3,7 @@ const initialState = {
 	posts:[]
 }
 
-function BlogReducer(state = initialState, action) {
+function PostsReducer(state = initialState, action) {
 	switch (action.type) {
 		case "GET_ALL_POSTS":	
 			return {
@@ -40,4 +40,4 @@ function BlogReducer(state = initialState, action) {
 	}
 }
 
-export default BlogReducer;
+export default PostsReducer;

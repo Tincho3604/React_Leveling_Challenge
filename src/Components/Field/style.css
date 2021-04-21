@@ -1,0 +1,201 @@
+.mainElementsContainer{
+    width: 250px;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+label{
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+}
+
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+input{
+    width: 200px;
+    height: 4vh;
+    border :none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+input:focus{
+    outline: none;
+}
+.submit{
+    border-radius: 5px;
+}
+
+.inputContainer{
+    width: 250px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#selectForm{
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 4vh;
+    font-size: 20px;
+    border:none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+}
+option{
+    font-weight: bold;
+}
+#selectForm:focus{
+    outline: none;
+}
+
+.submitButton{
+    border-radius: 3px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(123,122,120,1) 0%, rgba(236,47,16,1) 0%, rgba(133,122,120,1) 0%, rgba(175,57,57,1) 0%, rgba(69,68,68,1) 0%, rgba(0,0,0,1) 0%, rgba(0,137,247,1) 0%, rgba(9,246,204,1) 100%, rgba(230,0,0,1) 100%, rgba(0,69,125,1) 100%, rgba(0,0,0,1) 100%, rgba(4,5,6,1) 100%, rgba(247,0,233,1) 100%, rgba(218,115,178,1) 100%, rgba(140,156,190,1) 100%);
+    color:rgb(255, 255, 255);
+}
+.errorMessage{
+    color:rgb(255, 30, 0);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 1000px) and (min-width: 500px){
+    .mainElementsContainer{
+        height: 6vh;
+    }
+    input{
+        height: 5vh;
+    }
+
+    .errorMessage{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 200px){
+
+    .inputContainer{
+        margin-top: 10px;
+    }
+
+    .errorMessage{
+        font-size: 14px;
+    }
+}
+
+
+@media (max-height: 670px) and (min-height: 300px){
+    .mainElementsContainer{
+        height: 7vh;
+        width: 55vw;
+    }
+    
+    label{
+        padding-left: 15px;
+        font-size: 15px;
+        margin-bottom:10px ;
+    }
+
+    input{
+        width: 150px;
+    }
+    
+    .inputContainer{
+        width: 230px;
+        margin-top: 10px;
+    }
+    
+    #selectForm{
+        width: 150px;
+        height: 4vh;
+    }
+
+    .submitButton{
+        font-size: 12px;
+        width: 100px;
+    }
+    .errorMessage{
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Input */
+.eachInput, .submitButton{
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.eachInput:hover,.submitButton:hover, .eachInput:focus,.submitButton:focus, .eachInput:active,.submitButton:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/* Icon*/
+@-webkit-keyframes iconContainer {
+    25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    }
+    75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    }
+}
+@keyframes iconContainer {
+    25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    }
+    75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    }
+}
+.iconContainer {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(5px) translateZ(0);
+    transform: perspective(5px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+    .iconContainer:hover, .iconContainer:focus, .iconContainer:active {
+    -webkit-animation-name: iconContainer;
+    animation-name: iconContainer;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+} 

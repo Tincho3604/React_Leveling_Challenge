@@ -1,47 +1,29 @@
 import React from 'react';
-import Field from '../../Component/Field/index';
-import {fieldInfo} from '../../Constants/index';
+import Field from '../../Components/Field';
 import './style.css';
-import backGroundForm from '../../Images/registrerWallpaper.jpg';
 import { useForm } from 'react-hook-form';
-import swal from 'sweetalert';
-import Axios from 'axios';
-import {ROUTE_API} from '../../Constants/index';
+import {fieldsForm, customAlerts} from '../../Constants/constants';
 
 const Form = ({title}) => {
     
-
-    const {register, handleSubmit, errors } = useForm();
+    const {handleSubmit, formState: {errors}, register, reset } = useForm();
     
-
     const onSubmit = (data,e) => {
         e.preventDefault();
+        console.log('DATOS SUBMIT',data)
+        customAlerts("Form success complete!", "You add a new post", "success")
         e.target.reset();
-        Axios.post(`${ROUTE_API}/createRegister`, {
-            concept: data.concept,
-            amount: data.amount,
-            date: data.date,
-            types: data.type,
-            idUsers: localStorage.getItem('idUser')
-        }).then((res) => {
-            swal("Your record has been saved!", {
-                icon: "success",
-            });
-        }).catch((err) => {
-            console.log(err)
-        })
+        reset();
     }
-
     return (    
     <div className="mainFormContainer">
         <div className="imgContainer">  
-            <img src={backGroundForm} alt="imgForm" className="imgForm"/>
-        </div> 
+            </div> 
             <div className="form-registrer">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-container">
                         <h1>{title}</h1>
-                        {fieldInfo.map((item,index) => {
+                        {fieldsForm?.map((item,index) => {
                             return( 
                                 <Field
                                     type={item.type}
@@ -51,16 +33,16 @@ const Form = ({title}) => {
                                     htmlFor={item.htmlFor}
                                     labelText={item.labelText}
                                     inputType={item.inputType}
-                                    icon={item.icon}
-                                    optionText={item.optionText}
+                                    required={item.required}
                                     errors={errors}
                                     key={index}
-                                    refForm={register(item.registerInfo)}
                                     idSelect={'selectForm'}
                                     classSelect={'inputs'}
                                     classInput={'inputs'}
                                     inputStyle={'eachInput'}
+                                    registerRef={{...register(item.name, { required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i, message: 'Minimum 5 characters' })}}
                                 />
+                                
                             )
                         })}
                     <input type="submit" className="submitButton" value="Register operation"/>

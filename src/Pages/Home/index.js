@@ -4,7 +4,7 @@ import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { useSelector,useDispatch} from 'react-redux';
 import './style.css';
-import {getAllPosts} from '../../Redux/actions/postsActions';
+import {getAllPosts, deletePost} from '../../Redux/actions/postsActions';
 import {customAlerts} from '../../Constants/constants'
 
 
@@ -20,6 +20,7 @@ const Home = () => {
     },[]);
 
 const deleteCurrentPost = (e) => {
+    dispatch(deletePost())
     customAlerts(`You delete the post N° ${e} successfully`, "", "success")
     setPostState(postState?.filter((item) => item.id !== e))
 }

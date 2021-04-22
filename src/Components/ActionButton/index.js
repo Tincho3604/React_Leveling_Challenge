@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 const ActionButton = ({textButton, functionButton, argument, colorButton, path}) => {
-return (
+    return (
     <>
     <Link to={path} className="Linkbutton" style={{border:'none', background:'none'}}>
         <div className="buttonContainer" >

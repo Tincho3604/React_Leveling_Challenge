@@ -5,27 +5,41 @@ import Footer from '../../Components/Footer';
 import { useSelector,useDispatch} from 'react-redux';
 import './style.css';
 import {getAllPosts} from '../../Redux/actions/postsActions';
+import {customAlerts} from '../../Constants/constants'
+
 
 const Home = () => {
     
     const postsList = useSelector(store => store.PostsReducer.posts)
     const dispatch =  useDispatch()
-    const [postState, setPostState] = useState([])
+    const [postState, setPostState] = useState(postsList)
 
     useEffect(() => { 
         dispatch(getAllPosts());
-        localStorage.setItem('postArrays', JSON.stringify(postsList));
-        setPostState(JSON.parse(localStorage.getItem("postArrays")))
+        setPostState(postsList)
     },[]);
 
-return (
+const deleteCurrentPost = (e) => {
+    customAlerts(`You delete the post N° ${e} successfully`, "", "success")
+    setPostState(postState?.filter((item) => item.id !== e))
+}
+
+    return (
     <>
     <NavBar/>
         <div className="mainHomeContainer"> 
-            <h1>List of Blogs</h1>
+            <h1>List of Posts</h1>
             <div className="mainCardHomeContainer">
-                {postsList?.map((card, index) => {
-                    return <DetailCard key={index} title={card.title} id={card.id} userId={card.userId} body={card.body}/>
+
+                {postState?.slice(90,postState.length).map((card, index) => {
+                    return <DetailCard 
+                                key={index} 
+                                title={card.title} 
+                                id={card.id} 
+                                userId={card.userId} 
+                                body={card.body}
+                                complete={deleteCurrentPost}
+                    />
                 })}
             </div>
         </div>

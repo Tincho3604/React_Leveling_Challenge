@@ -3,7 +3,6 @@ import { ROUTE_API } from "../../Constants/constants"
 
 export const createPost = postInfo => {	
 	    return async (dispatch, getState) => {
-			await axios.post(`${ROUTE_API}/posts`, postInfo)
 			dispatch({
 				type: "SAVE_POST",
 				payload: postInfo
@@ -35,14 +34,11 @@ export const getAllPosts = () => {
 		}
 	}
 
-	export const editPost = (id) => {
+	export const editPost = (value, id) => {
 		return async (dispatch, getState) => {
-			const response = await axios.put(`${ROUTE_API}/posts/${id}`)
-			const info = response.data
-			console.log(info)
             dispatch({
 				type: "EDIT_POST",
-				payload: id
+				payload: value
 			})
 		}
 	}

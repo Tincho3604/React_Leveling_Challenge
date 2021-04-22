@@ -24,11 +24,14 @@ function PostsReducer(state = initialState, action) {
 
         case "EDIT_POST":	
                 let newArray = [...state.posts]
+				
                 for(let i=0; i<newArray.length; i++){
-                    if(newArray[i].id === action.payload){
+                    if(newArray[i].id === action.payload.id){
                         newArray[i] = action.payload
                     }
                 }
+				console.log(newArray);
+				
                 return {
                 ...state,
                 posts: newArray

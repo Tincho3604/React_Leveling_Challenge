@@ -11,7 +11,7 @@ const Form = ({title}) => {
     const postsList = useSelector(store => store?.PostsReducer.posts) 
 
     const [id, setId] = useState(postsList[postsList.length-1]?.id+1)
-    const [idUser, setIdUser] = useState(11)
+    const [userId, setUserId] = useState(11)
 
     const dispatch =  useDispatch()
     const {handleSubmit, formState: {errors}, register, reset } = useForm();
@@ -19,8 +19,7 @@ const Form = ({title}) => {
     const onSubmit = (data,e) => {
         e.preventDefault();
         setId(id+1);
-        let newArray = {...data, id, idUser};
-        console.log(newArray)
+        let newArray = {...data, id, userId};
         dispatch(createPost(newArray))
         customAlerts("Form success complete!", "You add a new post", "success")
         e.target.reset();
@@ -30,8 +29,6 @@ const Form = ({title}) => {
 
     useEffect(() => {
         dispatch(getAllPosts());
-        //console.log("Use Effect",postsList[postsList.length-1]?.id)
-        //setId(postsList[postsList.length-1]?.id)
     },[]);
 
 

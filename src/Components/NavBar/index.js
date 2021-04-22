@@ -16,14 +16,14 @@ return (
                 <label htmlFor="check" className="close"><AiIcons.AiOutlineCloseCircle size={30}/></label>
                     <ul>
                     {SidebarData?.map((item, index) => {
-              return (
+            return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path} onClick={() => item.func ? item.func() : ''}>
+                <Link to={item?.path} onClick={() => item.func ? item.func() : ''}>
                     {item.icon}
                     <span>{item.title}</span>
                 </Link>
                 </li>
-              );
+                );
             })}
                     </ul>
                 </nav>

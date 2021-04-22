@@ -1,0 +1,15 @@
+.mainCardFilterContainer{
+    background-color: rgb(182, 194, 245);
+    width: 40vw;
+    display:grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+.filterContainer{
+    margin-bottom: 25px;
+}
+.filterInput{
+    margin-left: 350px;
+}

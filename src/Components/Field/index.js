@@ -14,7 +14,8 @@ const Field = ({
     disabled,
     inputStyle,
     registerRef,
-    required
+    required,
+    functionField
 }) => {
 
         return(

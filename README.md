@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# React Leveling Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_It was developed to develop a client for a Blog. It must be set up in React, and consume the data of a JSON Placeholder, an API that exposes dummy data in JSON format._
 
-## Available Scripts
+## Challange requirements
+```
+The endpoints that you should use are:
 
-In the project directory, you can run:
+GET https://jsonplaceholder.typicode.com/posts
+Returns a list of posts
 
-### `yarn start`
+GET https://jsonplaceholder.typicode.com/posts/:id
+Returns the detail of a post based on the id specified in the parameter
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+POST https://jsonplaceholder.typicode.com/posts
+Simulate the creation of a new post
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+PUT / PATCH https://jsonplaceholder.typicode.com/posts/:id
+Simulates the update of a post based on the id specified in the parameter
 
-### `yarn test`
+DELETE https://jsonplaceholder.typicode.com/posts/:id
+Simulates the removal of a post based on the id specified in the parameter
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Considerations
+_Using these endpoints, the application should contain the following sections:
+* HOME:
+It will show a list of posts. In this list, only the title of each
+one, and the actions to go to the detail of it, edit it or delete it.
+* DETAIL:
+You should receive the identifier of a post and, if it exists, show your data.
+Otherwise, you should display an error message.
+* CREATION FORM:
+You must show a form that allows you to create a new post. The form must
+contain the title and content fields, and perform the validation of them (both are
+required). When submitting, the request must be made to the corresponding endpoint.
+* EDIT FORM:
+You should receive the identifier of a post and show a form that allows you to edit it. In the
+if it does not exist, display an error message. The form must contain the
+title and content fields, and validate them (both are required).
+When submitting, the request must be made to the corresponding endpoint.
+* OTHER CONSIDERATION: The app must contain a header with the links to the Home and the Edition Form.
+It must be responsive, you can use a template.
+The "Delete" action that the posts listed in the Home section will contain must
+make the request to the corresponding endpoint.
+State management can be done in any way you like, as can logic
+navigation._
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Starting 🚀 and Installation 🔧
+## Install dependencies for the server
+```
+git clone
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## The server runs at http: // localhost: 3000 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+_After completing these steps you will be able to view the project_
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project screenshots
+![b1f5b238-eb91-4ed5-a3b8-31c41d76fbc0](https://user-images.githubusercontent.com/62455807/115910123-d7305d80-a442-11eb-8115-3f84b25546f8.png)
+![8f8e2b41-74e8-4a8e-96cb-2abb8315ceea](https://user-images.githubusercontent.com/62455807/115910133-d8fa2100-a442-11eb-8d56-6a0efedfa9db.png)
+![2aee4ad5-4627-431e-a08e-4f2ac77625b0](https://user-images.githubusercontent.com/62455807/115910135-dac3e480-a442-11eb-850c-0cdeb6428beb.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Built with 🛠️
 
-## Learn More
+_The tools I use for this project are as follows:_
+* [Redux] (https://es.redux.js.org/) - Used to work with a global state.
+* [React-Hooks-Form] (https://react-hook-form.com/) - Used to estructure forms.
+* [React] (https://es.reactjs.org/) - Framework used.
+* [Sweetalert] (https://sweetalert.js.org/guides/) - Custom alerts.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Authors ✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+_Project carried out in a group way_
 
-### Analyzing the Bundle Size
+* ** Martin Cumpe ** - * Author *
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License 📄
 
-### Making a Progressive Web App
+All rights reserved.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

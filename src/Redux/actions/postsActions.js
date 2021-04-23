@@ -3,6 +3,8 @@ import { ROUTE_API } from "../../Constants/constants"
 
 export const createPost = postInfo => {	
 	    return async (dispatch, getState) => {
+			const response = await axios.post(`${ROUTE_API}/posts`)
+			const info = response.data
 			dispatch({
 				type: "SAVE_POST",
 				payload: postInfo
@@ -13,14 +15,23 @@ export const createPost = postInfo => {
 	
 export const getAllPosts = () => {
 		return async (dispatch, getState) => {
-			const response = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
-			const info = response.data
+			try{	
+				const response = await axios.get(`${ROUTE_API}/posts`, {
+					'mode': 'cors',
+					'headers': {
+						'Access-Control-Allow-Origin': '*',
+					}
+	        })
 			dispatch({
 				type: "GET_ALL_POSTS",
-				payload: info
+				payload: response.data
 			})
 		}
+			catch(e){
+                console.log(e)
+			}
 	}
+}
 
 	export const getPostById = (id) => {
 		return async (dispatch, getState) => {
@@ -36,6 +47,8 @@ export const getAllPosts = () => {
 
 	export const editPost = (value, id) => {
 		return async (dispatch, getState) => {
+			const response = await axios.put(`${ROUTE_API}/posts/${id}`)
+			const info = response.data
             dispatch({
 				type: "EDIT_POST",
 				payload: value

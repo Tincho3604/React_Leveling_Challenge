@@ -1,6 +1,6 @@
 # React Leveling Challenge
 
-_It was developed to develop a client for a Blog. It must be set up in React, and consume the data of a JSON Placeholder, an API that exposes dummy data in JSON format._
+_It was developed to create a client for a Blog. It must be configured in React and consume the data from a JSON placeholder, an API that exposes dummy data in JSON format._
 
 ## Challange requirements
 ```

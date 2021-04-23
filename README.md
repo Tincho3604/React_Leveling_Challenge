@@ -23,7 +23,7 @@ Simulates the removal of a post based on the id specified in the parameter
 ```
 
 ## Considerations
-_Using these endpoints, the application should contain the following sections:
+_Using these endpoints, the application should contain the following sections:_
 * HOME:
 It will show a list of posts. In this list, only the title of each
 one, and the actions to go to the detail of it, edit it or delete it.

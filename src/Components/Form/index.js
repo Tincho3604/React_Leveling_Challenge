@@ -57,7 +57,7 @@ const Form = ({title}) => {
                                     classSelect={'inputs'}
                                     classInput={'inputs'}
                                     inputStyle={'eachInput'}
-                                    registerRef={{...register(item.name, { required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i, message: 'Minimum 5 characters' })}}
+                                    registerRef={{...register(item.name, { required: true, maxLength: 20, pattern: /^[A-Za-z0-9\s]+$/g, message: 'Minimum 5 characters' })}}
                                 />
                                 
                             )

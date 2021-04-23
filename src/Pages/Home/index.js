@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import DetailCard from '../../Components/DetailCard';
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
+import ModalError from '../../Components/ModalError';
 import { useSelector,useDispatch} from 'react-redux';
 import './style.css';
 import {getAllPosts, deletePost} from '../../Redux/actions/postsActions';
@@ -25,6 +26,14 @@ const deleteCurrentPost = (e) => {
     setPostState(postState?.filter((item) => item.id !== e))
 }
 
+if(postState.length === 0){
+    return (
+    <>
+        <NavBar/>
+        <ModalError text="Post Not Founds"/>
+    </>
+    )
+}else{
     return (
     <>
     <NavBar/>
@@ -40,13 +49,14 @@ const deleteCurrentPost = (e) => {
                                 userId={card.userId} 
                                 body={card.body}
                                 complete={deleteCurrentPost}
-                    />
-                })}
+                        />
+                    })}
+                </div>
             </div>
-        </div>
-    <Footer />
-    </>
-    )
+                <Footer />
+            </>
+        )
+    }
 }
 
 export default Home;

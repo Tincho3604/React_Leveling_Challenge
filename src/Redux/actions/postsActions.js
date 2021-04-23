@@ -5,6 +5,7 @@ export const createPost = postInfo => {
 	    return async (dispatch, getState) => {
 			const response = await axios.post(`${ROUTE_API}/posts`)
 			const info = response.data
+			console.log(info)
 			dispatch({
 				type: "SAVE_POST",
 				payload: postInfo
@@ -49,6 +50,7 @@ export const getAllPosts = () => {
 		return async (dispatch, getState) => {
 			const response = await axios.put(`${ROUTE_API}/posts/${id}`)
 			const info = response.data
+			console.log(info)
             dispatch({
 				type: "EDIT_POST",
 				payload: value
@@ -61,6 +63,10 @@ export const getAllPosts = () => {
 			const response = await axios.delete(`${ROUTE_API}/posts/${id}`)
 			const info = response.data
 			console.log(info)
+			dispatch({
+				type: "DELETE_POST",
+				payload: id
+			})
 		}
 	}
 
